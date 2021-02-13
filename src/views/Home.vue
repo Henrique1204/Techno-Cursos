@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="loading">Carregando...</div>
+    <PaginaCarregando v-if="loading" />
     <div v-if="dados">
       <h1>Home</h1>
       <pre>{{dados}}</pre>
