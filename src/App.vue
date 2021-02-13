@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderSite />
 
-    <router-view></router-view>
+    <router-view class="container"></router-view>
   </div>
 </template>
 
@@ -39,5 +39,11 @@
 
   a.router-link-active, a:hover {
     color: #4B8;
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
   }
 </style>

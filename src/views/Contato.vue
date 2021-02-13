@@ -1,12 +1,22 @@
 <template>
     <div>
-        <h1>Contato</h1>
+        <div v-if="loading">Carregando...</div>
+        <div v-if="dados">
+            <h1>Contato</h1>
+            <pre>{{dados}}</pre>
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
+    import fetchDados from '@/mixins/fetchDados.js';
 
+    export default {
+        name: 'Contato',
+        mixins: [fetchDados],
+        created() {
+            this.fetchDados('/contato');
+        }
     }
 </script>
 
