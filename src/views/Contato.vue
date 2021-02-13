@@ -30,10 +30,6 @@
 </script>
 
 <style scoped>
-    h1 {
-        margin-bottom: 1rem;
-    }
-
     ul {
         margin-top: 1rem;
     }

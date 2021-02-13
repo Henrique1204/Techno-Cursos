@@ -45,10 +45,6 @@
 </script>
 
 <style scoped>
-  h1,h2 {
-    margin-bottom: 1rem;
-  }
-
   .btn-cursos {
     padding: 15px 40px;
     border: none;

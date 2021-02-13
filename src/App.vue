@@ -45,8 +45,12 @@
 
   .container {
     max-width: 800px;
-    padding: 20px 40px;
+    padding: 40px 20px;
     margin: 0 auto;
+  }
+
+  h1, h2 {
+    margin-bottom: 1rem;
   }
 
   img {
