@@ -11,10 +11,14 @@
                     <h2>Aulas</h2>
                     <ul class="aulas">
                         <li v-for="({ id, nome }) in dados.aulas" :key="id">
-                            <router-link to="/cursos">{{nome}}</router-link>
+                            <router-link :to="{ name: 'aula', params: { aula: id } }">
+                                {{nome}}
+                            </router-link>
                         </li>
                     </ul>
                 </div>
+
+                <router-view></router-view>
             </div>
         </transition>
     </div>
@@ -24,7 +28,7 @@
     import fetchDados from '@/mixins/fetchDados.js';
 
     export default {
-        name: 'curso',
+        name: 'Curso',
         props: ['curso'],
         mixins: [fetchDados],
         created() {
@@ -45,9 +49,14 @@
     .aulas li a {
         padding: 20px;
         border-radius: 4px;
-        font-weight: normal;
         background-color: #FFF;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         display: block;
+        transition: none;
+    }
+
+    .aulas li a.router-link-active, .aulas li a:hover {
+        color: #FFF;
+        background-color: #4B8;
     }
 </style>
