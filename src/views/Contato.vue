@@ -4,8 +4,14 @@
         
         <transition name="entrada">
             <div v-if="dados">
-                <h1>Contato</h1>
-                <pre>{{dados}}</pre>
+                <h1>{{dados.titulo}}</h1>
+                <p>{{dados.descricao}}</p>
+
+                <ul>
+                    <li v-for="(valor, key, index) in dados.contato" :key="key + '_' + index">
+                        <span>{{key}}:</span> {{valor}}
+                    </li>
+                </ul>
             </div>
         </transition>
     </div>
@@ -23,6 +29,17 @@
     }
 </script>
 
-<style>
+<style scoped>
+    h1 {
+        margin-bottom: 1rem;
+    }
 
+    ul {
+        margin-top: 1rem;
+    }
+
+    ul li span{
+        font-weight: bold;
+        text-transform: capitalize;
+    }
 </style>
